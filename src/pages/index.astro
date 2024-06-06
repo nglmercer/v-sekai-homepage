@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Navbar from '../components/Navbar.astro';
+import Tittlebox from '../components/Tittlebox.astro';
+
+// entonces se debe usar import { resumen } from '../../json/cv.json'
+import { informacion, links } from  '../../json/data-eng.json';
+const {currentLocale} = Astro
+console.log({currentLocale})
+let textcenter = "text-center";
+let textdefault = "long-text text-base";
+---
+<Navbar />
+<Layout title="V-Sekai">
+	<main>
+		
+		<h1>V-Sekai <span class="text-gradient"> with Astro</span> {currentLocale}</h1>
+		<Tittlebox title="V-Sekai" body={informacion.resumen} classname={textcenter}/>
+		<div class="informacion-text text-1xl" set:html={informacion.descripcion}></div>
+		<div class="informacion-text text-2xl" set:html={informacion.descripcion2}></div>
+		<div class="informacion-text text-blue-700 hover:text-blue-500"> <a href={links.discord} class='text-blue-700 hover:text-blue-500'>{informacion.invitacion}</a></div>
+		<Tittlebox title={informacion.about} body={informacion.aboutext} classname={textcenter}/>
+		<Tittlebox title={informacion.whygodot} body={informacion.whygodotext} classname={textdefault}/>
+		<Tittlebox title={informacion.uniquecommunity} body={informacion.uniquecommunitytext} classname={textdefault}/>
+		<Tittlebox title={informacion.WhyVSekai} body={informacion.WhyVSekaitext} classname={textdefault}/>
+		<Tittlebox title={informacion.whoarewe} body={informacion.whoarewetext} classname={textdefault}/>
+		<Tittlebox title={informacion.Whatdoweoffer} body={informacion.Whatdoweoffertext} classname={textdefault}/>
+		<Tittlebox title={informacion.whencanwehelp} body={informacion.whencanwehelptext} classname={textdefault}/>
+		<!-- <p class="instructions">
+			To get started, open the directory <code>src/pages</code> in your project.<br />
+			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+		</p>
+
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://docs.astro.build/"
+				title="Documentation"
+				body="Learn how Astro works and explore the official API docs."
+			/>
+			<Card
+				href="https://astro.build/integrations/"
+				title="Integrations"
+				body="Supercharge your project with new frameworks and libraries."
+			/>
+		</ul>
+	</main> -->
+</Layout>
+
+<style is:global>
+	body {
+		background-color: #444444;
+	}
+	.navbar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 1rem;
+		background-color: #101011;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 900px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.informacion-text {
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	a.text-gradient {
+		background-color: black;
+		background: black;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+</style>

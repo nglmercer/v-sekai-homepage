@@ -1,0 +1,26 @@
+{
+  "informacion":{
+    "resumen": "Your virtual reality platform, on your game engine.",
+    "detalles": "Imagine a completely free and open source social VR platform, utilizing the community and the power of Godot Engine 4.",
+    "descripcion": "Imagine a completely free and open source social VR platform, utilizing the community and the power of Godot Engine 4.",
+    "descripcion2": "V-Sekai, A completely community-run, self-hostable MIT open source software stack built with Godot Engine 4.",
+    "descripction3": "V-Sekai test",
+    "descripcion4": "V-Sekai test",
+    "experiencia": "experiencia",
+    "habilidades": "habilidades",
+    "intereses": "intereses",
+    "referencias": "referencias",
+    "proyectos": "proyectos"
+  },
+  "basics": {
+    "name": "Melserngl",
+    "label": "Editor, creador de contenido, programador y Desarrollador de aplicaciones interactivas.",
+    "image": "/mi-portafolio/me.png",
+    "email": "nglmercer@gmail.com",
+    "phone": "+51 918722242",
+    "url": "https://midu.dev",
+    "summary": "creador de contenido con 2 años de trayectoria editor, y programador con 1 año de experiencia.",
+    "location": "Cerru, Perú"
+  }
+  
+}
